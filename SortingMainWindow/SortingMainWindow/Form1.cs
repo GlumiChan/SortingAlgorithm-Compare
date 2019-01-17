@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SortingMainWindow
 {
@@ -22,6 +14,7 @@ namespace SortingMainWindow
             metroComboBox1.SelectedIndex = 0;
             Core.CoreInit(this);
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Init();

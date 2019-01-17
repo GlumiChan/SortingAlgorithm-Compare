@@ -86,9 +86,9 @@ namespace SortingMainWindow
                     SelectionSort(ref myArray);
                     break;
             }
-            UpdateLabel(main.label1, true);
             sw.Stop();
             PrintArray(myArray, main.richTextBox1);
+            UpdateLabel(main.label1, true);
 
         }
         private static void InsertionSort(ref int[] array)
@@ -260,16 +260,11 @@ namespace SortingMainWindow
         {
             if (force)
             {
-                if (main.checkBox1.Checked)
-                {
-                    Invoker.SetLabelText(label, "Array Access: " + arrayAccesses.ToString() + Environment.NewLine + "Comparison: " + comparisons.ToString());
-                }else
-                {
-                    Invoker.SetLabelText(label, "Array Access: " + arrayAccesses.ToString() + Environment.NewLine + "Comparison: " + comparisons.ToString() + Environment.NewLine + "Duration: " + sw.ElapsedMilliseconds.ToString() + " ms");
-                }
-            }else if (!main.checkBox1.Checked)
-            {
                 Invoker.SetLabelText(label, "Array Access: " + arrayAccesses.ToString() + Environment.NewLine + "Comparison: " + comparisons.ToString() + Environment.NewLine + "Duration: " + sw.ElapsedMilliseconds.ToString() + " ms");
+            }
+            else
+            {
+                Invoker.SetLabelText(label, "Array Access: " + arrayAccesses.ToString() + Environment.NewLine + "Comparison: " + comparisons.ToString());
             }
         }
         private static void PrintArray(int[] arr, Control ctrl)
@@ -283,11 +278,10 @@ namespace SortingMainWindow
         }
         private static void FillArray(ref int[] arr)
         {
-            int max = arr.Length + 1;
             Random rnd = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rnd.Next(0, max);
+                arr[i] = rnd.Next(0, int.MaxValue);
             }
         }
     }

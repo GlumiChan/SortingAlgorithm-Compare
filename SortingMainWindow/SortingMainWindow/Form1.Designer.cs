@@ -123,8 +123,9 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.metroButton1);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Padding = new System.Windows.Forms.Padding(23, 55, 23, 18);
+            this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 18);
             this.Resizable = false;
             this.Text = "Sort Algorithm - Compare";
             this.Load += new System.EventHandler(this.Form1_Load);
